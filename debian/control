@@ -1,0 +1,12 @@
+Source: ros-hydro-kobuki-core
+Section: misc
+Priority: extra
+Maintainer: Daniel Stonier <stonier@yujinrobot.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin
+Homepage: http://ros.org/wiki/kobuki_core
+Standards-Version: 3.9.2
+
+Package: ros-hydro-kobuki-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-kobuki-dock-drive, ros-hydro-kobuki-driver, ros-hydro-kobuki-ftdi
+Description: Non-ROS software for Kobuki, Yujin Robot's mobile research base.
