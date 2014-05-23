@@ -1,3 +1,26 @@
+## kobuki_core (hydro) - 0.5.4-0
+
+The packages in the `kobuki_core` repository were released into the `hydro` distro by running `/usr/bin/bloom-release kobuki_core -t hydro -r hydro` on `Fri, 23 May 2014 01:35:39 -0000`
+
+These packages were released:
+- `kobuki_core`
+- `kobuki_dock_drive`
+- `kobuki_driver`
+- `kobuki_ftdi`
+
+Version of package(s) in repository `kobuki_core`:
+- rosdistro version: `0.5.3-0`
+- old version: `0.5.3-0`
+- new version: `0.5.4-0`
+
+Versions of tools used:
+- bloom version: `0.5.9`
+- catkin_pkg version: `0.2.2`
+- rosdep version: `0.10.27`
+- rosdistro version: `0.3.5`
+- vcstools version: `0.1.35`
+
+
 ## kobuki_core - 0.5.3-0
 
 User `jorge@concert` released the packages in the `kobuki_core` repository by running `/usr/bin/bloom-release --track hydro --rosdistro hydro kobuki_core` on `Fri, 06 Sep 2013 10:35:53 -0000`
