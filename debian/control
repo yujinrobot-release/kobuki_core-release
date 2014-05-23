@@ -1,0 +1,12 @@
+Source: ros-hydro-kobuki-dock-drive
+Section: misc
+Priority: extra
+Maintainer: Younghun Ju <yhju@yujinrobot.com>
+Build-Depends: debhelper (>= 9.0.0), ros-hydro-catkin, ros-hydro-ecl-geometry, ros-hydro-ecl-linear-algebra, ros-hydro-ecl-threads
+Homepage: http://ros.org/wiki/kobuki_dock_drive
+Standards-Version: 3.9.2
+
+Package: ros-hydro-kobuki-dock-drive
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-ecl-geometry, ros-hydro-ecl-linear-algebra, ros-hydro-ecl-threads
+Description: Dock driving library for Kobuki. Users owning a docking station for Kobuki can use this tool to develop autonomous docking drive algorithms.
