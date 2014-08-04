@@ -7,7 +7,7 @@ if [ "$ROS_DISTRO" == "" ]; then
 fi
 
 if [ "$SOURCE" == "" ]; then
-  SOURCE=hydro
+  SOURCE=hydro-devel
 fi
 
 if [ "$TARGET" == "" ]; then
