@@ -1,3 +1,28 @@
+## kobuki_core (indigo) - 0.5.3-0
+
+The packages in the `kobuki_core` repository were released into the `indigo` distro by running `/usr/bin/bloom-release kobuki_core -t indigo -r indigo -n` on `Mon, 04 Aug 2014 12:45:45 -0000`
+
+These packages were released:
+- `kobuki_core`
+- `kobuki_dock_drive`
+- `kobuki_driver`
+- `kobuki_ftdi`
+
+Version of package(s) in repository `kobuki_core`:
+- upstream repository: https://github.com/yujinrobot/kobuki_core.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.5.3-0`
+
+Versions of tools used:
+- bloom version: `0.5.11`
+- catkin_pkg version: `0.2.4`
+- rosdep version: `0.10.30`
+- rosdistro version: `0.3.5`
+- vcstools version: `0.1.35`
+
+
 ## kobuki_core (hydro) - 0.5.4-0
 
 The packages in the `kobuki_core` repository were released into the `hydro` distro by running `/usr/bin/bloom-release kobuki_core -t hydro -r hydro` on `Fri, 23 May 2014 01:35:39 -0000`
