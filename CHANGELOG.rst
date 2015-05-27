@@ -2,6 +2,9 @@
 Changelog for package kobuki_dock_drive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.1 (2015-05-27)
+------------------
+
 0.6.0 (2014-08-04)
 ------------------
 * Redevelopment of kobuki dock drive algorithm.
