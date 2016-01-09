@@ -1,0 +1,12 @@
+Source: ros-indigo-kobuki-core
+Section: misc
+Priority: extra
+Maintainer: Daniel Stonier <stonier@yujinrobot.com>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
+Homepage: http://ros.org/wiki/kobuki_core
+Standards-Version: 3.9.2
+
+Package: ros-indigo-kobuki-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-kobuki-dock-drive, ros-indigo-kobuki-driver, ros-indigo-kobuki-ftdi
+Description: Non-ROS software for Kobuki, Yujin Robot's mobile research base.
