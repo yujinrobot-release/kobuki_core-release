@@ -1,3 +1,30 @@
+## kobuki_core (kinetic) - 0.7.0-0
+
+The packages in the `kobuki_core` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release kobuki_core --track kinetic --rosdistro kinetic --new-track` on `Fri, 06 May 2016 03:27:09 -0000`
+
+These packages were released:
+- `kobuki_core`
+- `kobuki_dock_drive`
+- `kobuki_driver`
+- `kobuki_ftdi`
+
+Version of package(s) in repository `kobuki_core`:
+
+- upstream repository: https://github.com/yujinrobot/kobuki_core.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.7.0-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.21`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.4`
+- rosdistro version: `0.4.7`
+- vcstools version: `0.1.35`
+
+
 ## kobuki_core (indigo) - 0.6.3-0
 
 The packages in the `kobuki_core` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --track indigo --rosdistro indigo kobuki_core` on `Fri, 06 May 2016 03:22:10 -0000`
