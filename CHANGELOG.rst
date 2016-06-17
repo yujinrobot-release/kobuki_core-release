@@ -2,6 +2,10 @@
 Changelog
 =========
 
+0.6.4 (2016-06-17)
+------------------
+* isnan -> std::isnan
+
 0.6.3 (2016-05-06)
 ------------------
 * bugfix cliff header packet
