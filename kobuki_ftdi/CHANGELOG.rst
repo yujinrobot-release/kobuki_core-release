@@ -2,6 +2,10 @@
 Changelog
 =========
 
+0.7.5 (2017-03-03)
+------------------
+* bugfixing the missing pkg-config dependency
+
 0.7.3 (2017-02-23)
 ------------------
 * bugfix the missing prefix in the pkg_search_module calls
