@@ -1,0 +1,71 @@
+ros-kinetic-kobuki-ftdi (0.7.8-0jessie) jessie; urgency=high
+
+  * Debian postinstall rule
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Sun, 02 Apr 2017 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.7.5-0jessie) jessie; urgency=high
+
+  * bugfixing the missing pkg-config dependency
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Fri, 03 Mar 2017 05:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.7.3-0jessie) jessie; urgency=high
+
+  * bugfix the missing prefix in the pkg_search_module calls
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Thu, 23 Feb 2017 05:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.6.1-0jessie) jessie; urgency=high
+
+  * remove kobuki_ros kobuki_nodelet libaries export in catkin_package closes #16 <https://github.com/yujinrobot/kobuki_core/issues/16>
+  * Contributors: Jihoon Lee
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Wed, 27 May 2015 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.6.0-0jessie) jessie; urgency=high
+
+  * Fix compilation.
+    - fix the names of the pkg-config libraries of libusb and libftdi. I checked on Ubuntu and OS X.
+    - ftdi-eeprom is not a library and has no pkg-config file.
+  * Update the readme in kobuki_ftdi
+  * Create README.md
+  * kobuki_ftdi : Updated doxygen document.
+  * Contributors: Jihoon Lee, Nikolaus Demmel, Younghun Ju
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Mon, 04 Aug 2014 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.5.3-0jessie) jessie; urgency=high
+
+
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Fri, 06 Sep 2013 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.5.2-0jessie) jessie; urgency=high
+
+
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Sat, 31 Aug 2013 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.5.1-0jessie) jessie; urgency=high
+
+  * Updated license info.
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Fri, 30 Aug 2013 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.5.0-0jessie) jessie; urgency=high
+
+  * Added extra url info on all packages.
+  * Updated old rnd email address.
+  * Fix URL to the previous changelog wiki.
+  * Changelogs at package level.
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Thu, 29 Aug 2013 04:00:00 -0000
+
+ros-kinetic-kobuki-ftdi (0.4.0-0jessie) jessie; urgency=high
+
+
+
+ -- Younghun Ju <yhju@yujinrobot.com>  Fri, 09 Aug 2013 04:00:00 -0000
+
+
