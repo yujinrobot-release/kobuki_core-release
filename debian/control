@@ -1,0 +1,13 @@
+Source: ros-melodic-kobuki-driver
+Section: misc
+Priority: extra
+Maintainer: Daniel Stonier <stonier@yujinrobot.com>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin, ros-melodic-ecl-build, ros-melodic-ecl-command-line, ros-melodic-ecl-converters, ros-melodic-ecl-devices, ros-melodic-ecl-geometry, ros-melodic-ecl-mobile-robot, ros-melodic-ecl-sigslots, ros-melodic-ecl-time
+Homepage: http://ros.org/wiki/kobuki_driver
+Standards-Version: 3.9.2
+
+Package: ros-melodic-kobuki-driver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-ecl-command-line, ros-melodic-ecl-converters, ros-melodic-ecl-devices, ros-melodic-ecl-geometry, ros-melodic-ecl-mobile-robot, ros-melodic-ecl-sigslots, ros-melodic-ecl-time
+Description: C++ driver library for Kobuki: Pure C++ driver library for Kobuki.
+ This is for those who do not wish to use ROS on their systems.
