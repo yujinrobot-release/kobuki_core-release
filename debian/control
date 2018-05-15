@@ -1,0 +1,13 @@
+Source: ros-melodic-kobuki-dock-drive
+Section: misc
+Priority: extra
+Maintainer: Younghun Ju <yhju@yujinrobot.com>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin, ros-melodic-ecl-build, ros-melodic-ecl-geometry, ros-melodic-ecl-linear-algebra, ros-melodic-ecl-threads
+Homepage: http://ros.org/wiki/kobuki_dock_drive
+Standards-Version: 3.9.2
+
+Package: ros-melodic-kobuki-dock-drive
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-ecl-geometry, ros-melodic-ecl-linear-algebra, ros-melodic-ecl-threads
+Description: Dock driving library for Kobuki.
+ Users owning a docking station for Kobuki can use this tool to develop autonomous docking drive algorithms.
