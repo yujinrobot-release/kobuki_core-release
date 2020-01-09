@@ -41,6 +41,7 @@
 #include <string>
 #include <csignal>
 #include <termios.h> // for keyboard input
+#include <ecl/command_line.hpp>
 #include <ecl/time.hpp>
 #include <ecl/threads.hpp>
 #include <ecl/sigslots.hpp>
@@ -65,7 +66,7 @@ public:
    **********************/
   KobukiManager();
   ~KobukiManager();
-  bool init();
+  bool init(const std::string & device);
 
   /*********************
    ** Runtime
@@ -86,11 +87,11 @@ private:
   double vx, wz;
   ecl::LegacyPose2D<double> pose;
   kobuki::Kobuki kobuki;
-  ecl::Slot<> slot_stream_data;
 
   double linear_vel_step, linear_vel_max;
   double angular_vel_step, angular_vel_max;
   std::string name;
+  ecl::Slot<> slot_stream_data;
 
   /*********************
    ** Commands
@@ -122,14 +123,14 @@ private:
  * @brief Default constructor, needs initialisation.
  */
 KobukiManager::KobukiManager() :
-                         linear_vel_step(0.05),
-                         linear_vel_max(1.0),
-                         angular_vel_step(0.33),
-                         angular_vel_max(6.6),
-                         quit_requested(false),
-                         key_file_descriptor(0),
-                         vx(0.0), wz(0.0),
-                         slot_stream_data(&KobukiManager::processStreamData, *this)
+  vx(0.0), wz(0.0),
+  linear_vel_step(0.05),
+  linear_vel_max(1.0),
+  angular_vel_step(0.33),
+  angular_vel_max(6.6),
+  slot_stream_data(&KobukiManager::processStreamData, *this),
+  quit_requested(false),
+  key_file_descriptor(0)
 {
   tcgetattr(key_file_descriptor, &original_terminal_state); // get terminal properties
 }
@@ -144,7 +145,7 @@ KobukiManager::~KobukiManager()
 /**
  * @brief Initialises the node.
  */
-bool KobukiManager::init()
+bool KobukiManager::init(const std::string & device)
 {
   /*********************
    ** Parameters
@@ -165,7 +166,7 @@ bool KobukiManager::init()
    **********************/
   kobuki::Parameters parameters;
   parameters.sigslots_namespace = "/kobuki";
-  parameters.device_port = "/dev/kobuki";
+  parameters.device_port = device;
   parameters.enable_acceleration_limiter = true;
 
   kobuki.init(parameters);
@@ -197,7 +198,7 @@ void KobukiManager::spin()
     thread.cancel();
   }
 */
-  ecl::Sleep sleep(0.1);
+  ecl::Sleep sleep(ecl::Duration(0.1));
   while (!quit_requested){
     sleep();
   }
@@ -259,27 +260,27 @@ void KobukiManager::processKeyboardInput(char c)
    */
   switch (c)
   {
-    case 68://kobuki_msgs::KeyboardInput::KeyCode_Left:
+    case 68://kobuki_msgs::KeyboardInput::KEYCODE_LEFT:
     {
       incrementAngularVelocity();
       break;
     }
-    case 67://kobuki_msgs::KeyboardInput::KeyCode_Right:
+    case 67://kobuki_msgs::KeyboardInput::KEYCODE_RIGHT:
     {
       decrementAngularVelocity();
       break;
     }
-    case 65://kobuki_msgs::KeyboardInput::KeyCode_Up:
+    case 65://kobuki_msgs::KeyboardInput::KEYCODE_UP:
     {
       incrementLinearVelocity();
       break;
     }
-    case 66://kobuki_msgs::KeyboardInput::KeyCode_Down:
+    case 66://kobuki_msgs::KeyboardInput::KEYCODE_DOWN:
     {
       decrementLinearVelocity();
       break;
     }
-    case 32://kobuki_msgs::KeyboardInput::KeyCode_Space:
+    case 32://kobuki_msgs::KeyboardInput::KEYCODE_SPACE:
     {
       resetVelocity();
       break;
@@ -378,7 +379,7 @@ ecl::LegacyPose2D<double> KobukiManager::getPose() {
 *****************************************************************************/
 
 bool shutdown_req = false;
-void signalHandler(int signum) {
+void signalHandler(int /* signum */) {
   shutdown_req = true;
 }
 
@@ -388,11 +389,16 @@ void signalHandler(int signum) {
 
 int main(int argc, char** argv)
 {
+  ecl::CmdLine cmd_line("simple_keyop program", ' ', "0.2");
+  ecl::UnlabeledValueArg<std::string> device_port("device_port", "Path to device file of serial port to open, connected to the kobuki", false, "/dev/kobuki", "string");
+  cmd_line.add(device_port);
+  cmd_line.parse(argc, argv);
+
   signal(SIGINT, signalHandler);
 
   std::cout << "Simple Keyop : Utility for driving kobuki by keyboard." << std::endl;
   KobukiManager kobuki_manager;
-  kobuki_manager.init();
+  kobuki_manager.init(device_port.getValue());
 
   ecl::Sleep sleep(1);
   ecl::LegacyPose2D<double> pose;
