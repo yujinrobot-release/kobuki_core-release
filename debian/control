@@ -1,0 +1,13 @@
+Source: ros-eloquent-kobuki-ftdi
+Section: misc
+Priority: optional
+Maintainer: Daniel Stonier <d.stonier@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ftdi-eeprom, libftdi-dev, libusb-dev, pkg-config, ros-eloquent-ament-cmake-ros, ros-eloquent-ecl-build, ros-eloquent-ecl-command-line, ros-eloquent-ros-workspace
+Homepage: http://ros.org/wiki/kobuki_ftdi
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-kobuki-ftdi
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ftdi-eeprom, libftdi-dev, libusb-dev, ros-eloquent-ecl-command-line, ros-eloquent-ros-workspace
+Description: Utilities for flashing and enabling Kobuki's USB connection.
+ This package contains tools for flashing the Kobuki's FTDI chip (usually done at the factory). The special firmware for the FTDI chip (USB to serial converter) enables it to appear as /dev/kobuki on the user's PC.
