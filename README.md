@@ -1,3 +1,30 @@
+## kobuki_core (melodic) - 0.7.9-1
+
+The packages in the `kobuki_core` repository were released into the `melodic` distro by running `/usr/bin/bloom-release --track melodic --rosdistro melodic kobuki_core` on `Fri, 21 Aug 2020 03:00:49 -0000`
+
+These packages were released:
+- `kobuki_core`
+- `kobuki_dock_drive`
+- `kobuki_driver`
+- `kobuki_ftdi`
+
+Version of package(s) in repository `kobuki_core`:
+
+- upstream repository: https://github.com/yujinrobot/kobuki_core.git
+- release repository: https://github.com/yujinrobot-release/kobuki_core-release.git
+- rosdistro version: `0.7.8-0`
+- old version: `0.7.8-0`
+- new version: `0.7.9-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.7`
+- catkin_pkg version: `0.4.22`
+- rosdep version: `0.19.0`
+- rosdistro version: `0.8.2`
+- vcstools version: `0.1.42`
+
+
 ## kobuki_core (eloquent) - 0.8.1-1
 
 The packages in the `kobuki_core` repository were released into the `eloquent` distro by running `/usr/bin/bloom-release --track eloquent --rosdistro eloquent kobuki_core` on `Thu, 09 Jan 2020 21:38:17 -0000`
