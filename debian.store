@@ -1,1 +1,1 @@
-{"trim": "", "base": "0f3a2da", "trimbase": "", "parent": "debian/melodic/kobuki_driver", "previous": "45ef422"}
+{"base": "b145aa8", "parent": "debian/melodic/kobuki_driver", "previous": "3f26a72", "trim": "", "trimbase": ""}
