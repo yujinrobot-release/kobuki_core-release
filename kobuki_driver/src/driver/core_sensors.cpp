@@ -45,13 +45,13 @@ bool CoreSensors::serialise(ecl::PushAndPop<unsigned char> & byteStream)
 }
 bool CoreSensors::deserialise(ecl::PushAndPop<unsigned char> & byteStream)
 {
-  if (byteStream.size() < (length+2U))
+  if (byteStream.size() < length+2)
   {
     //std::cout << "kobuki_node: kobuki_default: deserialise failed. not enough byte stream." << std::endl;
     return false;
   }
 
-  unsigned char header_id(0x00), length_packed(0x00);
+  unsigned char header_id, length_packed;
   buildVariable(header_id, byteStream);
   buildVariable(length_packed, byteStream);
   if( header_id != Header::CoreSensors ) return false;

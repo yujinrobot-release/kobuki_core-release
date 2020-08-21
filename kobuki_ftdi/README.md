@@ -6,7 +6,7 @@ Kobuki ftdi
 * [Official Web Page](http://kobuki.yujinrobot.com) - home page, sales, specifications and hardware howto.
 * [Protocol, Usage and Api Documentation](http://yujinrobot.github.com/kobuki/doxygen/index.html) - in doxygen.
 
-### Important Utilities ###
+### Important Scripts ###
 
 * create_udev_rules - creates /dev/kobuki link 
 * get_serial_number
@@ -14,28 +14,25 @@ Kobuki ftdi
 
 ### Trouble Shooting ###
 
+##### What to check if kobuki does not bring up properly #####
+
+* Does kobuki stream data?
+
+> cat /dev/kobuki # check if any data stream happens
+
 * Does kobuki appear as USB device?
 
 > lsusb # See if there is "0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC"
 
 > dmesg # See what happen when kobuki usb is plugged.
 
-* No /dev/kobuki?
+* Is there /dev/kobuki?
 
-# Directly via sources
-> sudo cp 57-kobuki.rules /etc/udev/rules.d
-> sudo service udev reload
-> sudo service udev restart
-# Or using the ROS2 client tools
-> ros2 run kobuki_ftdi create_udev_rules
+> rosrun kobuki_ftdi create_udev_rules
 
-* Does kobuki stream data?
+* Is Kobuki serial number correct?
 
-> cat /dev/kobuki # check if any data stream happens
-
-* Is the serial number correct?
-
-> sudo <install_location>/lib/kobuki_ftdi/get_serial_number
+> sudo ./get_serial_number # in the directory of kobuki_ftdi scripts
 
 Check if it is different from below
 
@@ -48,6 +45,12 @@ Device #0
 
 If it is different,
 
-> sudo <install_location>/lib/kobuki_ftdi/flasher
+> sudo ./flasher # in the directory of kobuki_ftdi scripts
 
 Then check the serial again.
+
+
+
+
+
+

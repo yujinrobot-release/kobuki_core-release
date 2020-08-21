@@ -1,56 +1,38 @@
-##############################################################################
-# Cmake
-##############################################################################
-
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8.3)
 project(kobuki_ftdi)
-
-##############################################################################
-# Find Packages
-##############################################################################
-
-find_package(ament_cmake_ros REQUIRED)
-find_package(ecl_build REQUIRED)
-find_package(ecl_command_line REQUIRED)
+find_package(catkin REQUIRED COMPONENTS ecl_command_line)
 
 # pkg-config packages
 find_package(PkgConfig)
-pkg_search_module(libusb REQUIRED libusb)
-pkg_search_module(libftdi REQUIRED libftdi)
+pkg_check_modules(libusb REQUIRED libusb)
+pkg_check_modules(libftdi REQUIRED libftdi)
 
-##############################################################################
-# Platform Configuration
-##############################################################################
+catkin_package(
+   INCLUDE_DIRS include
+   CATKIN_DEPENDS ecl_command_line
+   DEPENDS libusb libftdi
+)
 
-ament_package_xml()
-ecl_enable_cxx14_compiler()
-ecl_enable_cxx_warnings()
-
-##############################################################################
-# Sources
-##############################################################################
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_subdirectory(src)
 
-##############################################################################
-# Install data files
-##############################################################################
-
 install(DIRECTORY bluetooth
-        DESTINATION share
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 install(DIRECTORY eeproms
-        DESTINATION share
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-install(PROGRAMS scripts/create_udev_rules
-        DESTINATION lib/${PROJECT_NAME}
+install(PROGRAMS scripts/turtlebot_config
+                 scripts/create_udev_rules
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(FILES 57-kobuki.rules
-        DESTINATION share/${PROJECT_NAME}
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-# This has issues....hydro doing the same thing will result in
+# This has issues....hydro doing th same thing will result in 
 # a file conflict. We could call it 57-groovy-kobuki.rules and
 # 57-hydro-kobuki.rules. But that seems kind of lame and could
 # break things if they are actually different (which should
@@ -60,8 +42,3 @@ install(FILES 57-kobuki.rules
 #        DESTINATION /etc/udev/rules.d/
 #)
 
-##############################################################################
-# Exports
-##############################################################################
-
-ament_package()

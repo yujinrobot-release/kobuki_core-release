@@ -135,7 +135,7 @@ void DockDrive::update(const std::vector<unsigned char> &signal
   velocityCommands(vx, wz);
 
   // for easy debugging
-  generateDebugMessage(signal_filt, bumper, charger, debug_str);
+  generateDebugMessage(signal_filt, bumper, charger, pose_update, debug_str);
 
   return;
 }

@@ -78,6 +78,7 @@ private:
   double speed;  // in [mm/s]
   double bias; //wheelbase, wheel_to_wheel, in [m]
   double wheel_radius; // in [m]
+  int imu_heading_offset;
   const double tick_to_rad;
 
   ecl::DifferentialDrive::Kinematics diff_drive_kinematics;

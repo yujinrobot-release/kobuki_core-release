@@ -2,10 +2,6 @@
 Changelog
 =========
 
-0.8.0 (2020-01-09)
-------------------
-* build rules updated for ament
-
 0.6.2 (2016-01-09)
 ------------------
 * enable the cx11 compiler

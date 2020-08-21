@@ -2,9 +2,14 @@
 Changelog
 =========
 
-0.8.0 (2020-01-09)
+
+Forthcoming
+-----------
+* ...
+
+0.7.9 (2018-08-20)
 ------------------
-* build rules updated for ament
+* [udev] restore low latency timer for ftdi operation
 
 0.7.8 (2017-04-02)
 ------------------

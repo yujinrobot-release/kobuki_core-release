@@ -71,7 +71,7 @@ Kobuki::~Kobuki()
   sig_debug.emit("Device: kobuki driver terminated.");
 }
 
-void Kobuki::init(Parameters &parameters)
+void Kobuki::init(Parameters &parameters) throw (ecl::StandardException)
 {
 
   if (!parameters.validate())
@@ -485,7 +485,7 @@ void Kobuki::setExternalPower(const DigitalOutput &digital_output) {
 
 void Kobuki::playSoundSequence(const enum SoundSequences &number)
 {
-  sendCommand(Command::PlaySoundSequence(number));
+  sendCommand(Command::PlaySoundSequence(number, kobuki_command.data));
 }
 
 bool Kobuki::setControllerGain(const unsigned char &type, const unsigned int &p_gain,

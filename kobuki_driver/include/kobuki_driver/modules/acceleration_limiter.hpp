@@ -51,10 +51,15 @@ class AccelerationLimiter {
 public:
   AccelerationLimiter() :
     is_enabled(true),
+    last_speed(0),
     last_timestamp(ecl::TimeStamp()),
     last_vx(0.0),
     last_wz(0.0)
-  {}
+  {
+    (void) last_speed;
+    (void) last_radius;
+  }
+
   void init(bool enable_acceleration_limiter
     , double linear_acceleration_max_= 0.5, double angular_acceleration_max_= 3.5
     , double linear_deceleration_max_=-0.5*1.2, double angular_deceleration_max_=-3.5*1.2)
@@ -79,7 +84,6 @@ public:
 
   std::vector<double> limit(const double &vx, const double &wz)
   {
-    std::vector<double> ret_val;
     if( is_enabled ) {
       //get current time
       ecl::TimeStamp curr_timestamp;
@@ -117,17 +121,20 @@ public:
       //oss << "[" << std::setw(6) << command_vx << ", " << std::setw(6) << command_wz << "]";
       //std::cout << oss.str() << std::endl;
 
+      std::vector<double> ret_val;
       ret_val.push_back(command_vx);
       ret_val.push_back(command_wz);
-    } else {
-      ret_val.push_back(0.0);
-      ret_val.push_back(0.0);
+      return ret_val;
     }
-    return ret_val;
+
+    return {};
   }
 
 private:
   bool is_enabled;
+  short last_speed;
+  short last_radius;
+//  unsigned short last_timestamp;
   ecl::TimeStamp last_timestamp;
 
   double last_vx, last_wz; // In [m/s] and [rad/s]
