@@ -1,1 +1,1 @@
-{"trim": "", "base": "b9ed612", "trimbase": "", "parent": "debian/melodic/kobuki_ftdi", "previous": "b7b4ce8"}
+{"base": "50a2789", "parent": "debian/melodic/kobuki_ftdi", "previous": "527f03a", "trim": "", "trimbase": ""}
