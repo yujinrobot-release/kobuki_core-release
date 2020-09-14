@@ -1,0 +1,13 @@
+Source: ros-noetic-kobuki-driver
+Section: misc
+Priority: optional
+Maintainer: Daniel Stonier <stonier@yujinrobot.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin, ros-noetic-ecl-build, ros-noetic-ecl-command-line, ros-noetic-ecl-console, ros-noetic-ecl-converters, ros-noetic-ecl-devices, ros-noetic-ecl-geometry, ros-noetic-ecl-mobile-robot, ros-noetic-ecl-sigslots, ros-noetic-ecl-time
+Homepage: http://ros.org/wiki/kobuki_driver
+Standards-Version: 3.9.2
+
+Package: ros-noetic-kobuki-driver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-ecl-command-line, ros-noetic-ecl-console, ros-noetic-ecl-converters, ros-noetic-ecl-devices, ros-noetic-ecl-geometry, ros-noetic-ecl-mobile-robot, ros-noetic-ecl-sigslots, ros-noetic-ecl-time
+Description: C++ driver library for Kobuki: Pure C++ driver library for Kobuki.
+ This is for those who do not wish to use ROS on their systems.
