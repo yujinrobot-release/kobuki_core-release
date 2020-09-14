@@ -1,1 +1,1 @@
-{"trim": "", "base": "c82835d", "trimbase": "", "parent": "debian/kinetic/kobuki_dock_drive", "previous": "111bf43"}
+{"base": "e8c231b", "parent": "debian/kinetic/kobuki_dock_drive", "previous": "9ffedeb", "trim": "", "trimbase": ""}
