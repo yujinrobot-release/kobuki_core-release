@@ -1,1 +1,1 @@
-{"trim": "", "base": "7e40cdd", "trimbase": "", "parent": "debian/kinetic/kobuki_ftdi", "previous": "f635352"}
+{"base": "20c85e6", "parent": "debian/kinetic/kobuki_ftdi", "previous": "5912aad", "trim": "", "trimbase": ""}
