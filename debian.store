@@ -1,1 +1,1 @@
-{"trim": "", "base": "980b563", "trimbase": "", "parent": "debian/kinetic/kobuki_core", "previous": "b9965b4"}
+{"base": "495f09b", "parent": "debian/kinetic/kobuki_core", "previous": "8b9b589", "trim": "", "trimbase": ""}
